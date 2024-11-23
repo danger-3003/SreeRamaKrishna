@@ -27,7 +27,7 @@ function Gallery() {
   })
 
   return (
-    <div ref={gallerySection} className='pt-20 pb-10 md:py-20 px-5 sm:px-10'>
+    <div ref={gallerySection} className='pt-20 pb-10 md:py-20 px-5 sm:px-10 overflow-hidden'>
       <div data-aos="fade-right" className=''>
         <p className='text-[#eb2348] uppercase font-bold text-2xl md:text-3xl text-center'>Our Gallery</p>
       </div>

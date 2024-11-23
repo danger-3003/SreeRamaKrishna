@@ -29,7 +29,7 @@ function Products() {
   })
 
   return (
-    <div ref={productSection} className='px-5 sm:px-10 md:px-20 py-20 font-[poppins]'>
+    <div ref={productSection} className='px-5 sm:px-10 md:px-20 py-20 font-[poppins] overflow-hidden'>
       <div className='' data-aos="fade-right">
         <p className='text-[#eb2348] uppercase font-bold text-2xl md:text-3xl text-center'>Our Products</p>
       </div>
