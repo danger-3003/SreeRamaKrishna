@@ -47,7 +47,7 @@ function Navbar() {
           <li className='hover:text-[#65c8ff]' onClick={handelMenu}><Link to="/#gallery">Gallery</Link></li>
           <li className='hover:text-[#65c8ff]' onClick={handelMenu}><Link to="/#contact">Contact</Link></li>
         </ul>
-        <Link to="#contact" className='right-5 absolute md:relative text-white bg-[#eb2348] p-1.5 px-3 rounded-md flex items-center justify-center gap-2'>
+        <Link to="/#contact" className='right-5 absolute md:relative text-white bg-[#eb2348] p-1.5 px-3 rounded-md flex items-center justify-center gap-2'>
           <FontAwesomeIcon icon={faEnvelope} />
           <p className='hidden sm:block'>Contact</p>
         </Link>
