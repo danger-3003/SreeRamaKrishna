@@ -39,7 +39,7 @@ function Navbar() {
         <div className=''>
           <img src={Logo} alt="Logo" className='w-24 md:ml-8 my-1' style={{filter:"drop-shadow(0px 0px 0.4px black"}}/>
         </div>
-        <ul className={`flex items-center justify-center flex-col md:flex-row gap-5 absolute ${scrollY>150?"bg-white md:bg-transparent":"bg-black md:bg-transparent"} ${menu?"top-[4.5rem]":"-top-96"} py-5 left-0 w-screen md:top-0 md:py-0 md:h-auto md:w-auto md:relative uppercase font-medium text-sm lg:text-base transition-all duration-500`}>
+        <ul className={`flex items-center justify-center flex-col md:flex-row gap-5 absolute ${scrollY>150?"bg-white md:bg-transparent":"bg-white md:bg-transparent"} ${menu?"top-[4.5rem]":"-top-96"} py-5 left-0 w-screen md:top-0 md:py-0 md:h-auto md:w-auto md:relative uppercase font-medium text-sm lg:text-base transition-all duration-500`}>
           <li className='hover:text-[#65c8ff]' onClick={handelMenu}><Link to="/#home">Home</Link></li>
           <li className='hover:text-[#65c8ff]' onClick={handelMenu}><Link to="/#about">About</Link></li>
           <li className='hover:text-[#65c8ff]' onClick={handelMenu}><Link to="/#products">Products</Link></li>
