@@ -26,7 +26,7 @@ function About() {
             <div className="flex items-center justify-center flex-col sm:flex-row sm:gap-7 overflow-hidden">
                 <div
                     data-aos="fade-right"
-                    className="font-[poppins] basis-[60%] lg:basis-auto"
+                    className="font-[poppins] basis-[60%] lg:basis-[60%]"
                 >
                     <p className="text-lg sm:text-xl font-[poppins] font-semibold">
                         Welcome to{" "}
@@ -64,7 +64,7 @@ function About() {
                 </div>
                 <div
                     data-aos="fade-left"
-                    className="basis-[40%] mb-5 sm:mb-10 lg:basis-auto"
+                    className="basis-[40%] mb-5 sm:mb-10 lg:basis-[40%]"
                 >
                     <img
                         src={Profile}
