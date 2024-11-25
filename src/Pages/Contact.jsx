@@ -27,7 +27,7 @@ function Contact() {
             name: details.name,
             email: details.email,
             toMail: "srkengineering@yahoo.co.in",
-            toName: "Sree Rama Krishna Eng. Company",
+            toName: "Sree Rama Krishna Engineering Company",
             phone: details.number,
             subject: details.Subject, // Include inquiryType in subject
             message: details.Body,

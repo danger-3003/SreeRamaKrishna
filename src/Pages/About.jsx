@@ -31,7 +31,7 @@ function About() {
                     <p className="text-lg sm:text-xl font-[poppins] font-semibold">
                         Welcome to{" "}
                         <span className="font-[poppins] text-[#eb2348] font-bold uppercase text-3xl md:text-4xl">
-                            Sree&nbsp;Rama Krishna Eng. Company
+                            Sree&nbsp;Rama Krishna Engineering Company
                         </span>
                     </p>
                     <p className="mt-5 md:mt-10 mb-5 text-sm md:text-base">

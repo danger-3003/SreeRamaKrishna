@@ -39,7 +39,7 @@ function Home() {
                     >
                         Sree Rama Krishna
                         <br />
-                        Eng. Company-
+                        Engineering Company-
                     </p>
                     <p
                         data-aos="fade-right"
