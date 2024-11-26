@@ -23,7 +23,7 @@ function Footer() {
           <img src={Logo} alt="Logo" className='w-64 lg:w-72'/>
         </div>
         <div className=' xl:pr-20 w-64 lg:w-80 xl:w-96'>
-          <p className='text-[#eb2348] font-semibold text-2xl my-2 text-center sm:tetx-left'>Contact Us</p>
+          <p className='text-[#eb2348] font-semibold text-2xl my-2 text-center sm:text-left'>Contact Us</p>
           <div className='flex items-start justify-center flex-col gap-2'>
             <div className="text-center sm:text-left">
               <FontAwesomeIcon icon={faMapLocation} className=' mr-3'/>
