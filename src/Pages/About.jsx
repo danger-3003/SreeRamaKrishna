@@ -1,12 +1,15 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Profile from "../assets/About/Profile.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import axios from "axios";
+import Aboutdata from "./AboutData";
 
 function About() {
     const location = useLocation();
     const aboutSection = useRef(null);
+    const [aboutData, setAboutData] = useState({});
 
     useEffect(() => {
         if (location.hash === "#about" && aboutSection.current) {
@@ -17,6 +20,18 @@ function About() {
         AOS.init({ duration: 1000 });
         AOS.refresh();
     });
+    useEffect(() => {
+        axios
+            .get(
+                "https://api.cosmicjs.com/v3/buckets/sree-rama-krishna-production/objects/674ab9213dbd639ab303fdfd?pretty=true&read_key=gAWSPSpeztGYsLXlFRfFCk1Db1TC4VYHE66zef4zjn8cp3h3Vo&depth=1&props=slug,title,metadata,type"
+            )
+            .then((res) => {
+                setAboutData(res.data.object.metadata);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }, []);
 
     return (
         <div
@@ -34,33 +49,7 @@ function About() {
                             Sree&nbsp;Rama Krishna Engineering Company
                         </span>
                     </p>
-                    <p className="mt-5 md:mt-10 mb-5 text-sm md:text-base">
-                        Established in 1960 in Nidadavolu, West Godavari, Sree
-                        Rama Krishna Engineering Company was founded by
-                        <span className="text-[#eb2348] font-semibold">
-                            {" "}
-                            Immani Vishnu Rao garu
-                        </span>{" "}
-                        with a vision to deliver excellence in industrial and
-                        construction materials. Over the decades, we have
-                        specialized in providing
-                        <span className="text-[#eb2348] font-semibold">
-                            {" "}
-                            premium Mild Steel (M.S.), Galvanized Iron (G.I.),
-                            and Square Pipes
-                        </span>
-                        , sourced from trusted brands like Jindal, Fortune, and
-                        Tata. With branches in{" "}
-                        <span className="text-[#eb2348] font-semibold">
-                            Visakhapatnam, Secunderabad,
-                        </span>{" "}
-                        and{" "}
-                        <span className="text-[#eb2348] font-semibold">
-                            Rajahmundry
-                        </span>
-                        , we bring premium pipe solutions closer to your
-                        projects and needs.
-                    </p>
+                    <p dangerouslySetInnerHTML={{ __html: aboutData.about }} className="mt-5 md:mt-10 mb-5 text-sm md:text-base"></p>
                 </div>
                 <div
                     data-aos="fade-left"

@@ -1,11 +1,18 @@
 import {Link} from "react-router-dom"
+import { useState } from "react"
 import { faMobileAlt, faEnvelope, faMapLocation } from '@fortawesome/free-solid-svg-icons'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Logo from "../assets/LogoName.svg"
 import Bg from "../assets/Gallery/insideEight.jpg"
+import axios from "axios"
 
 function Footer() {
+  const [mobile,setMobile]=useState({});
+  axios.get('https://api.cosmicjs.com/v3/buckets/sree-rama-krishna-production/objects/674abad33dbd639ab303fe08?pretty=true&read_key=gAWSPSpeztGYsLXlFRfFCk1Db1TC4VYHE66zef4zjn8cp3h3Vo&depth=1&props=slug,title,metadata,type')
+  .then((res)=>{setMobile(res.data.object.metadata)})
+  .catch((err)=>{console.log(err)});
+
   return (
     <div className="pt-10 pb-20 flex items-center justify-between flex-col px-5 md:px-10 text-black font-[poppins]" style={{background:`linear-gradient(to right,rgba(255,255,255,0.5),rgba(255,255,255,0.5)),url(${Bg})`,backgroundPosition:"center",backgroundSize:"cover"}}>
       <div>
@@ -31,11 +38,11 @@ function Footer() {
             </div>
             <div className="text-center sm:text-left w-full">
               <FontAwesomeIcon icon={faWhatsapp} className='text-green-800 mr-3'/>
-              <a href='https://api.whatsapp.com/send?phone=9849266633' target='_blank'>+91 9849266633</a>
+              <a href={`https://api.whatsapp.com/send?phone=${mobile.phone_number_1}`} target='_blank'>+91 {mobile.phone_number_1}</a>
             </div>
             <div className="text-center sm:text-left w-full">
               <FontAwesomeIcon icon={faMobileAlt} className=' mr-3'/>
-              <a href='tel:9985273737'>+91 9985273737</a>
+              <a href={`tel:${mobile.phone_number_2}`}>+91 {mobile.phone_number_2}</a>
             </div>
           </div>
         </div>
