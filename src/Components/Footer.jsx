@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { faMobileAlt, faEnvelope, faMapLocation } from '@fortawesome/free-solid-svg-icons'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,9 +9,11 @@ import axios from "axios"
 
 function Footer() {
   const [mobile,setMobile]=useState({});
-  axios.get('https://api.cosmicjs.com/v3/buckets/sree-rama-krishna-production/objects/674abad33dbd639ab303fe08?pretty=true&read_key=gAWSPSpeztGYsLXlFRfFCk1Db1TC4VYHE66zef4zjn8cp3h3Vo&depth=1&props=slug,title,metadata,type')
-  .then((res)=>{setMobile(res.data.object.metadata)})
-  .catch((err)=>{console.log(err)});
+  useEffect(()=>{
+    axios.get('https://api.cosmicjs.com/v3/buckets/sree-rama-krishna-production/objects/674abad33dbd639ab303fe08?pretty=true&read_key=gAWSPSpeztGYsLXlFRfFCk1Db1TC4VYHE66zef4zjn8cp3h3Vo&depth=1&props=slug,title,metadata,type')
+    .then((res)=>{setMobile(res.data.object.metadata)})
+    .catch((err)=>{console.log(err)});
+  },[]);
 
   return (
     <div className="pt-10 pb-20 flex items-center justify-between flex-col px-5 md:px-10 text-black font-[poppins]" style={{background:`linear-gradient(to right,rgba(255,255,255,0.5),rgba(255,255,255,0.5)),url(${Bg})`,backgroundPosition:"center",backgroundSize:"cover"}}>
